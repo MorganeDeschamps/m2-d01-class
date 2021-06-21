@@ -1,11 +1,15 @@
-// const url = "http://pokeapi.salestock.net/api/v2/pokemon/7"
-const url = "https://pokeapi.co/api/v2/pokemon/7";
-// use first url as a backup only
+const apiRequestPromise = fetch('https://api.spacexdata.com/v3/launches');
 
-fetch(url)
-  .then(res => {
-    console.log("success!", res);
-  })
-  .catch(err => {
-    console.log("something went wrong...", err);
+
+apiRequestPromise
+.then(response => {
+  const data = response.json()
+  return data
+})
+.then( data => {
+  console.log(data)
+
+  data.forEach(element => {
+    console.log(element)
   });
+})
