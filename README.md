@@ -23,3 +23,5 @@
 ## Extra Resources
 
 - [Promises intro](https://scotch.io/tutorials/javascript-promises-for-dummies)
+
+- [Visualize async and event loop](http://latentflip.com/loupe/)
