@@ -1,14 +1,54 @@
-const databaseIsUp = false
+function serverDataHandler(resolve, reject){
+   const DBisUp = false
+  const data ={
+    item: 'MacBook Pro 16',
+    price: 2600,
+    year: 2020,
+    img: "https://www.macnificos.com/sites/files/styles/product_page/public/images/product/macbook-16-1_1.jpg" 
+  }
 
-function promiseHandler(resolve, reject){
-  if(databaseIsUp) resolve(JSON.stringify({data: "I am data", status: "current"}))
-  else reject(new Error("DB is down"))
+  const error = new Error("Unable to reach server..")
 
-  // if(dayIsTuesday) resolve("Tuesdays are fun") repeatig a reslve on a settled romise causes an error
+  if(DBisUp) resolve(data)
+  else reject(error)
 }
 
-const awesomePromise = new Promise(promiseHandler)
+const serverQuery = new Promise(serverDataHandler)
 
-awesomePromise
- .then(data => console.log(data)) 
- .catch(err => alert(err))
+
+
+function updateDOMWithData(data){
+  const div = document.createElement("div")
+  div.innerHTML = `
+<div class="container">
+  <article class="product">
+    <img src="${data.img}" alt="">
+    <h3>${data.item}</h3>
+    <h3>${data.price}</h3>
+    <h4>Year: ${data.year}</h4>
+  </article>
+</div>
+  `
+  document.body.appendChild(div);
+}
+
+function updateDOMWithError(err){
+  const div = document.createElement("div")
+  div.innerHTML = `
+<div class="container error">
+
+  <article class="product">
+  <h1>ERROR</h1>
+    <p>${err}</p>
+    <img src="https://vignette.wikia.nocookie.net/battlefordreamisland/images/f/f1/Roboty_book.png/revision/latest?cb=20190908174044" alt="">
+  </article>
+</div>
+  `
+  document.body.appendChild(div);
+}
+
+
+
+serverQuery
+  .then(data => updateDOMWithData(data))
+  .catch(err => updateDOMWithError(err))
