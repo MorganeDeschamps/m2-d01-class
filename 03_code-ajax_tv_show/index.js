@@ -13,7 +13,7 @@ function fetchSingleShow(showId){
   singleMovieQuery
   .then(response => response.json())
   .then(movieData =>{
-    console.log(movieData)
+    console.log("movieData: ",movieData)
     const showDetails = document.getElementById("show-details")
     showDetails.innerHTML = ''
       let title = document.createElement('h3')
@@ -36,7 +36,7 @@ freeTextQuery.then(response => {
 })
 
 .then ((listOfMovies) => {
-    console.log(listOfMovies)
+    console.log("listOfMovies: ",listOfMovies)
 listOfMovies.forEach(movie=>{
 const movieListElement = document.createElement('h1')
 movieListElement.innerText = movie.show.name
