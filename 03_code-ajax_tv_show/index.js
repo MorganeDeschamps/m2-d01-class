@@ -35,12 +35,45 @@ freeTextQuery.then(response => {
     return response.json()
 })
 
-.then ((listOfMovies) => {
+.then (listOfMovies => {
+
+
+
     console.log("listOfMovies: ",listOfMovies)
 listOfMovies.forEach(movie=>{
 const movieListElement = document.createElement('h1')
 movieListElement.innerText = movie.show.name
 movieListElement.addEventListener("click", ()=>fetchSingleShow(movie.show.id))
 document.getElementById("shows-list").appendChild(movieListElement) 
-    })
+
+})
   })
+
+
+
+/*
+
+// This wold be the very long way to create and returna a Proomise to be albe to pass the movie.show.id outside ot the then callback prison
+.then (listOfMovies => {
+
+
+
+  console.log("listOfMovies: ",listOfMovies)
+listOfMovies.forEach(movie=>{
+const movieListElement = document.createElement('h1')
+movieListElement.innerText = movie.show.name
+movieListElement.addEventListener("click", ()=>fetchSingleShow(movie.show.id))
+document.getElementById("shows-list").appendChild(movieListElement) 
+
+const myPromise = new Promise(function(resolve, reject){
+resolve(movie.show.id)
+})
+return myPromise
+})
+.then(movieId => {
+
+}
+
+)
+
+*/
