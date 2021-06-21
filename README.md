@@ -1,38 +1,25 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-# Module X - Day X
+# Module 2 - Day 1
 
 
 ## Lab 
 
-[Link to LAB](# lab)
+[Promise me a dinner](https://github.com/ironhack-labs/lab-es6-promises)
 
 
 ## Class
 
-- [Link Topic 1](# .md Topic 1)
+- ES6 promises
 
-- [Link Topic 1] (# .md Topic 2)
-
-- [Link Topic 1] (# .md Topic 3)
-
-- etc...
+- ES 6 destructuring
 
 
 ## Self Guided
 
-[Link to Self Guided](# Self Guided)
-
-
-## Assesment 
-
-[Link to Assesment](# assesment)
+[ES6 Koans exercises](https://github.com/ironhack-labs/lab-es6-javascript-koans)
 
 
 ## Extra Resources
 
-- [Link to Extra Resource 1](# Extra Resources 1)
-
-- [Link to Extra Resource 2](# Extra Resources 2)
-
-- [Link to Extra Resource 3](# Extra Resources 3)
+- [Promises intro](https://scotch.io/tutorials/javascript-promises-for-dummies)
